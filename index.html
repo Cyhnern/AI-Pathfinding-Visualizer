@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced AI Pathfinding Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="control-panel">
+        <h2>AI Pathfinding Visualizer</h2>
+        <div class="controls">
+            <select id="tool-select">
+                <option value="wall">Duvar Çiz (Siyah)</option>
+                <option value="weight">Çamur Çiz (Kahverengi - Maliyet: 5)</option>
+            </select>
+
+            <select id="algorithm-select">
+                <option value="none">Bir Algoritma Seçin</option>
+                <option value="bfs">BFS (Ağırlıkları Görmez)</option>
+                <option value="dfs">DFS (Ağırlıkları Görmez)</option>
+                <option value="dijkstra">Dijkstra (Maliyet Hesaplar ⭐)</option>
+                <option value="astar">A* Search (Maliyet Hesaplar ⭐)</option>
+            </select>
+
+            <div class="slider-container">
+                <label for="speed-slider">Hız: </label>
+                <input type="range" id="speed-slider" min="1" max="100" value="50">
+            </div>
+
+            <button id="visualize-btn">Görselleştir</button>
+            <button id="maze-btn" style="background-color: #28a745;">Labirent Oluştur</button>
+            <button id="clear-btn">Temizle</button>
+        </div>
+    </div>
+
+    <div id="stats-panel">
+        <div>Ziyaret Edilen Kare: <span id="visited-count">0</span></div>
+        <div>Çalışma Süresi: <span id="time-spent">0 ms</span></div>
+        <div>Toplam Yol Maliyeti: <span id="path-length">0</span></div>
+    </div>
+
+    <div id="grid-container">
+        </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
